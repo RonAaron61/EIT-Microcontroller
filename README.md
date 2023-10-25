@@ -13,9 +13,13 @@ Creating an Electrical Impedance Tomography device using ESP32-S2 as the microco
 - [Programs](#Programs)
 - [Result](#Result)
 
+---
+
 ## Abstract
 
 Abstract
+
+---
 
 ## Component
 
@@ -52,12 +56,21 @@ Multi/Demultiplexer
 
 Electroda
 
+---
 
 ## Design
 
 Schematic :
 
-PCB :
+<img src="assets/image/Sheet_1.png" align="center"></img>
+<img src="assets/image/Sheet_2.png" align="center"></img>
+<img src="assets/image/Sheet_3.png" align="center"></img>
+
+PCB Model :
+
+<img src="assets/image/PCB_2D.png" width=700></img>
+
+---
 
 ## Programs
 
@@ -69,6 +82,7 @@ Micropython
 
 PyEIT
 
+---
 
 ## Result
 
