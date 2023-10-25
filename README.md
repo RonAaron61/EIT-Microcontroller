@@ -74,11 +74,21 @@ PCB Model :
 
 ## Programs
 
+The program is divided into 2 parts, for the microcontroller to get the data, and to process the data into an image. For the microcontroller I use Micropython simply because I just want to learn
+Micropython, and for the image reconstruction I use the PyEIT library for python.
+
 ### Micropython
 
-Micropython
+The IDE I'm using is [Arduino Lab for Micropython](https://labs.arduino.cc/en/labs/micropython)
+
+The Libray for the module that I use:
+
+- AD9833 : [AD9833-mchobby](https://github.com/mchobby/esp8266-upy/tree/master/ad9833)
+- ADS1115 : [ADS1115_mpy-wollewald](https://github.com/wollewald/ADS1115_mpy/tree/main)
 
 ### PyEIT
+
+[PyEIT Github](https://github.com/eitcom/pyEIT) for more info
 
 PyEIT
 
