@@ -62,9 +62,9 @@ Electroda
 
 Schematic :
 
-<img src="assets/image/Sheet_1.png" align="center"></img>
-<img src="assets/image/Sheet_2.png" align="center"></img>
-<img src="assets/image/Sheet_3.png" align="center"></img>
+<img src="assets/image/Sheet_1.png" align="center"/>
+<img src="assets/image/Sheet_2.png" align="center"/>
+<img src="assets/image/Sheet_3.png" align="center"/>
 
 PCB Model :
 
