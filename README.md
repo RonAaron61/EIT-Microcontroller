@@ -25,11 +25,9 @@ Abstract
 
 ### Positive to Negative Converter
 
-Because the output of the signal is still an AC signal, we need to convert it to a DC signal, so the microcontroller can read it. I used a peak detector as the AC-to-DC converter. consisting of an op-amp, diode, capacitor, and resistor. 
+Because all the IC that I use need dual rail supply (positive and negative) we need to change from positive input to positive and negative. First I try using LM2662 Module and get the negative supply, but when I try to connect it to the IC, the result signal is not stable with changing offset. So I try using another method which is using a voltage divider with buffer on the ground.
 
 <img src="assets/image/Positive-Negative.png" width=600></img>
-
-At first, I didn't use a resistor and when I checked using a multimeter I got a satisfied result, but when it was connected to the microcontroller ADC it suddenly went higher than it should have. So because a multimeter usually has around 1 MΩ impedance, I tried connecting a 1 MΩ resistor to it and got a kinda satisfied result. 
 
 
 ### AD9833
@@ -90,6 +88,10 @@ On the second IA, there's also a High Pass Filter because the signal from the hu
 ### AC to DC Converter
 
 Because the output of the signal is still an AC signal, we need to convert it to a DC signal, so the microcontroller can read it. I used a peak detector as the AC-to-DC converter. consisting of an op-amp, diode, capacitor, and resistor. 
+
+(image)
+
+At first, I didn't use a resistor and when I checked using a multimeter I got a satisfied result, but when it was connected to the microcontroller ADC it suddenly went higher than it should have. So because a multimeter usually has around 1 MΩ impedance, I tried connecting a 1 MΩ resistor to it and got a kinda satisfied result. 
 
 
 ### ADS1115
