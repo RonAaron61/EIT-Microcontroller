@@ -109,21 +109,15 @@ Multi/Demultiplexer
 
 ### Electrode
 
-Electroda
+For the electrode, I use regular 16 copper plates with a thickness of 0.2 cm, a height of 5 cm, and a width of 1 cm. Then the electrodes will be attached to a plastic container with a diameter of 13.5 cm at the top, 11 cm at the bottom a height of 6 cm. The electrode is connected with 16 pin idc wire
+
+<img src="assets/image/ElectrodeHousing.png" align="center"/>
 
 ---
 
 ## Design
 
-Schematic :
-
-<img src="assets/image/Sheet_1.png" align="center"/>
-<img src="assets/image/Sheet_2.png" align="center"/>
-<img src="assets/image/Sheet_3.png" align="center"/>
-
-PCB Model :
-
-<img src="assets/image/PCB_2D.png" width=700></img>
+--Design--Image--
 
 ---
 
@@ -143,12 +137,49 @@ The Libray for the module that I use:
 
 ### PyEIT
 
-[PyEIT Github](https://github.com/eitcom/pyEIT) for more info
+To reconstruct the data into image I use PyEIT library on python
 
-PyEIT
+[PyEIT Github](https://github.com/eitcom/pyEIT) for more info
 
 ---
 
 ## Result
 
-Result
+### Prototype
+
+First I made the prototype using a project board according to the design
+
+<img src="assets/image/Result_Prototype_1/Prototype.png" align="center"/>
+
+For the electrode housing/container, I use a regular plastic bowl, with around 13.5 cm diameter on top, 11 cm diameter on the bottom, and 6 cm height. Then on the electrode housing, I fill it with regular tap water (half of the container). 
+
+To get the data first we need to get the reference (homogenous) data, that is the water-only data. After we get the reference data we can place the anomaly on the container, then we get the data again. 
+
+I tried using a plastic marker as the anomaly and here's the result, I used a 30k Hz sine wave signal
+
+*Please note that in the image between the real placement image and the result, the image is mirrored on the x-axis
+
+<img src="assets/image/Result_Prototype_1/Result_all_30K.png" align="center"/>
+
+Based on the result and my past project with EIT, the blue color means the anomaly has a low conductivity such as plastic, if the anomaly is red colored that means the anomaly has a higher conductivity
+
+After the prototype is tested, and it's shown that the prototype can get the data that can be reconstructed into an image with good precision, then we can continue it using PCB
+
+---
+
+### PCB Implementation
+
+Schematic :
+
+<img src="assets/image/Sheet_1.png" align="center"/>
+<img src="assets/image/Sheet_2.png" align="center"/>
+<img src="assets/image/Sheet_3.png" align="center"/>
+
+PCB Model :
+
+<img src="assets/image/PCB_2D.png" width=700></img>
+
+#### Result
+
+
+
