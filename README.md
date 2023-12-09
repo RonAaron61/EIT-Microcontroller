@@ -8,8 +8,9 @@ Creating an Electrical Impedance Tomography device using ESP32-S2 as the microco
 ## List of Content
 
 - [Abstract](#Absract)
-- [Component](#Component)
+- [Introduction](#Instroduction)
 - [Design](#Design)
+- [Component](#Component)
 - [Programs](#Programs)
 - [Result](#Result)
 
@@ -21,18 +22,34 @@ Abstract
 
 ---
 
+## Introduction
+
+Electrical impedance tomography (EIT) is a non-invasive, radiation-free medical imaging technique. It's used to image the electrical impedance variations inside a volume of interest. In this project I made an EIT using an ESP32-S2 microcontroller, and the EIT that was made had a total of 16 electrodes. One of the goals of this project is to create an EIT that is cheap and easy to create and use.
+
+Previously I had made an EIT using an Analog Discovery 2 for my undergraduate thesis and it was successful, but because the price of the Analog Discovery 2 was relatively expensive, I proposed making an EIT using a microcontroller, namely the ESP32-S2. However, the use of a microcontroller such as ESP has weaknesses, namely the lack of features such as not being able to produce AC signals, not having a good ADC, not being able to read AC signals, etc. so you need to use another module or circuit. but the advantage of using a microcontroller is that it is cheap
+
+---
+
+## Design
+
+The Electrical Impedance Tomography (EIT) that is made consists of several components such as the AD9833 module, amplifier, High Pass Filter, instrument amplifier, VCCS, multi/demultiplexer, AC DC converter, and ADC, and of course, the microcontroller which uses the ESP32-S2
+
+<img src="assets/image/EITDiagram3.png" align="center"/>
+
+---
+
 ## Component
 
 ### Positive to Negative Converter
 
-Because all the IC that I use need dual rail supply (positive and negative) we need to change from positive input to positive and negative. First I try using LM2662 Module and get the negative supply, but when I try to connect it to the IC, the result signal is not stable with changing offset. So I try using another method which is using a voltage divider with buffer on the ground.
+Because all the ICs that are used need dual rail supply (positive and negative) we need to change from positive input to positive and negative. First I tried using LM2662 Module and got the negative supply, but when I tried to connect it to the IC, the result signal was not stable with changing offset. So I tried using another method which is using a voltage divider with buffer on the ground.
 
 <img src="assets/image/Positive-Negative.png" width=600></img>
 
 
 ### AD9833
 
-o create the sine wave signal I use the AD9833 dds module, which can produce sine, triangle, and square wave signals with 0-12.5 MHz, but in this project, I only use 50 kHz. The module can be powered with 2.3 V to 5.5 V. This module uses 3-wire SPI interface.
+To create the sine wave signal I use the AD9833 dds module, which can produce sine, triangle, and square wave signals with 0-12.5 MHz, but in this project, I only use 50 kHz. The module can be powered with 2.3 V to 5.5 V. This module uses a 3-wire SPI interface.
 
 <img src="assets/image/AD9833.jpg" width=600></img>
 
@@ -40,7 +57,7 @@ When powered with ± 3.25 V it produces around 0.1 V Vrms of sine wave signal at
 
 (image)
 
-Because the signal is too small I use Non inverting amplifier to increase the signal and get around 0.58 V of Vrms
+Because the signal is too small I use Non inverting amplifier to increase the signal and get around 0.5 V of Vrms
 
 
 ### Non-Inverting Amplifier
@@ -89,42 +106,36 @@ On the second IA, there's also a High Pass Filter because the signal from the hu
 
 Because the output of the signal is still an AC signal, we need to convert it to a DC signal, so the microcontroller can read it. I used a peak detector as the AC-to-DC converter. consisting of an op-amp, diode, capacitor, and resistor. 
 
-(image)
+<img src="assets/image/ACDC.png" width=600/>
 
 At first, I didn't use a resistor and when I checked using a multimeter I got a satisfied result, but when it was connected to the microcontroller ADC it suddenly went higher than it should have. So because a multimeter usually has around 1 MΩ impedance, I tried connecting a 1 MΩ resistor to it and got a kinda satisfied result. 
 
 
 ### ADS1115
 
-For the ADC I don't use the Arduino ADC but I use a module, I use the ADS1115 16bit ADC module 
+For the ADC I don't use the Microcontroller ADC but I use a module, I use the ADS1115 16bit ADC module 
 
 <img src="assets/image/ADS1115.jpg" width=500></img>
 
 ### Multi/Demultiplexer
 
-Multi/Demultiplexer
+Multi/Demultiplexer used is CD74HC4067 Module
 
 <img src="assets/image/CD74HC4067.jpg" width=500></img>
 
 
 ### Electrode
 
-For the electrode, I use regular 16 copper plates with a thickness of 0.2 cm, a height of 5 cm, and a width of 1 cm. Then the electrodes will be attached to a plastic container with a diameter of 13.5 cm at the top, 11 cm at the bottom a height of 6 cm. The electrode is connected with 16 pin idc wire
+For the electrode, I use regular 16 copper plates with a thickness of 0.2 cm, a height of 5 cm, and a width of 1 cm. Then the electrodes will be attached to a plastic container with a diameter of 13.5 cm at the top, 11 cm at the bottom a height of 6 cm. The electrode is connected with 16 pin IDC wire
 
 <img src="assets/image/ElectrodeHousing.png" align="center"/>
 
 ---
 
-## Design
-
---Design--Image--
-
----
-
 ## Programs
 
-The program is divided into 2 parts, for the microcontroller to get the data, and to process the data into an image. For the microcontroller I use Micropython simply because I just want to learn
-Micropython, and for the image reconstruction I use the PyEIT library for python.
+The program is divided into 2 parts, for the microcontroller to get the data, and to process the data into an image. For the microcontroller, I use Micropython simply because I just want to learn
+Micropython, and for the image reconstruction I use the PyEIT library for Python.
 
 ### Micropython
 
@@ -137,7 +148,7 @@ The Libray for the module that I use:
 
 ### PyEIT
 
-To reconstruct the data into image I use PyEIT library on python
+To reconstruct the data into the image I use the PyEIT library on python
 
 [PyEIT Github](https://github.com/eitcom/pyEIT) for more info
 
@@ -157,7 +168,7 @@ To get the data first we need to get the reference (homogenous) data, that is th
 
 I tried using a plastic marker as the anomaly and here's the result, I used a 30k Hz sine wave signal
 
-*Please note that in the image between the real placement image and the result, the image is mirrored on the x-axis
+*Please note that in the image between the real placement image and the result, the image is mirrored on the x-axis*
 
 <img src="assets/image/Result_Prototype_1/Result_all_30K.png" align="center"/>
 
@@ -181,5 +192,5 @@ PCB Model :
 
 #### Result
 
-
+result...
 
