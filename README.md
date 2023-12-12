@@ -88,9 +88,9 @@ Based on it's equations:
 
 > H. Yazdanian, M. Mosayebi Samani and A. Mahanm, "Characteristics of the Howland current source for bioelectric impedance measurements systems," 2013 20th Iranian Conference on Biomedical Engineering (ICBME), Tehran, Iran, 2013, pp. 189-193, doi: 10.1109/ICBME.2013.6782216.
 
--> So using the equation the current should be around 0.58 mA.
+-> So using the equation the current should be around 0.5 mA.
 
-$$ {Iout \over 0.58 V} = {1 \over 1000} {1000 \over 1000} $$
+$$ {Iout \over 0.5 V} = {1 \over 1000} {1000 \over 1000} $$
 
 but after testing it using a 215 Ω resistor I get around 0.11 V vrms, and using basic Ohm's law $I = V/R$ , I = 0.511 mA, and using a 955 Ω resistor I get around 0.52 V vrms, so the current is around 0.544 mA.
 So after testing it, it should be safe for human
@@ -129,9 +129,17 @@ Multi/Demultiplexer used is CD74HC4067 Module
 <img src="assets/image/CD74HC4067.jpg" width=500></img>
 
 
+### ESP32-S2 (Wemos S2 mini)
+
+<img src="assets/image/s2_mini_front.jpg" width=300/> <img src="assets/image/s2_mini_back.jpg" width=300/>
+
+For the microcontroller, I use Wemos S2 Mini, a mini wifi boards based ESP32-S2FN4R2. The reason I use this board is because of the compact size and it has lot of GPIO pin to use, because to drive the multi/demultiplexer I need at least 16 IO pin, then 2 pin for SDA/SCL, and 3 SPI connection
+
+
+
 ### Electrode
 
-For the electrode, I use regular 16 copper plates with a thickness of 0.2 cm, a height of 5 cm, and a width of 1 cm. Then the electrodes will be attached to a plastic container with a diameter of 13.5 cm at the top, 11 cm at the bottom a height of 6 cm. The electrode is connected with 16 pin IDC wire
+For the electrode, I used 16 regular copper plates with a thickness of 0.2 cm, a height of 5 cm, and a width of 1 cm. Then the electrodes will be attached to a plastic container with a diameter of 13.5 cm at the top, 11 cm at the bottom a height of 6 cm. The electrode is connected with 16 pin IDC wire
 
 <img src="assets/image/ElectrodeHousing.png" align="center"/>
 
