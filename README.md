@@ -49,7 +49,7 @@ Because all the ICs that are used need dual rail supply (positive and negative) 
 
 ### AD9833
 
-To create the sine wave signal I use the AD9833 dds module, which can produce sine, triangle, and square wave signals with 0-12.5 MHz, but in this project, I only use 50 kHz. The module can be powered with 2.3 V to 5.5 V. This module uses a 3-wire SPI interface.
+To create the sine wave signal I use the AD9833 dds module, which can produce sine, triangle, and square wave signals with 0-12.5 MHz. The module can be powered with 2.3 V to 5.5 V. This module uses a 3-wire SPI interface.
 
 <img src="assets/image/AD9833.jpg" width=600></img>
 
