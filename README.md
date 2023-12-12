@@ -53,9 +53,11 @@ To create the sine wave signal I use the AD9833 dds module, which can produce si
 
 <img src="assets/image/AD9833.jpg" width=600></img>
 
-When powered with ± 3.25 V it produces around 0.1 V Vrms of sine wave signal at 50kHz (after a high pass to remove DC) and around 0.2 V at 5V supply
+When powered the module produces around 0.1 V Vrms of sine wave signal at 30kHz (after a high pass to remove DC)
 
-(image)
+*Please ignore that the screen is broken*
+
+<img src="assets/image/AD_Out_Raw.jpg" width=600/>
 
 Because the signal is too small I use Non inverting amplifier to increase the signal and get around 0.5 V of Vrms
 
@@ -66,6 +68,9 @@ Non-Inverting Amplifier
 
 <img src="assets/image/Non-Inverting-Amplifier.png" width=600></img>
 
+The signal after amplify
+
+<img src="assets/image/AD_Out_Amp.jpg" width=600/>
 
 ### VCCS
 
@@ -167,6 +172,12 @@ For the electrode housing/container, I use a regular plastic bowl, with around 1
 To get the data first we need to get the reference (homogenous) data, that is the water-only data. After we get the reference data we can place the anomaly on the container, then we get the data again. 
 
 I tried using a plastic marker as the anomaly and here's the result, I used a 30k Hz sine wave signal
+
+Example of the data results in graph (*Y axis is the voltage magnitude*)
+
+<img src="assets/image/Result_Prototype_1/Graph_result_ex.png" align="center"/>
+
+Results of the real placement object and reconstructed image
 
 *Please note that in the image between the real placement image and the result, the image is mirrored on the x-axis*
 
