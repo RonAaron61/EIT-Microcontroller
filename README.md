@@ -211,5 +211,10 @@ PCB Model :
 
 #### Result
 
-result...
+The PCB result:
 
+<img src="assets/image/PCB_Board.jpg" align="center" width=700/>
+
+After printing the PCB I try again to get data. Using the same frequency, amplitude, electrode housing and plastic marker as the object, I added a little bit of NaCl to the water, and here's the results:
+
+<img src="assets/image/PCB_Result1/PCB_R1.png" align="center"/>
