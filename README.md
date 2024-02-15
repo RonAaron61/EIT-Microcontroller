@@ -205,16 +205,19 @@ Schematic :
 <img src="assets/image/Sheet_2.png" align="center"/>
 <img src="assets/image/Sheet_3.png" align="center"/>
 
+<!--
 PCB Model :
 
 <img src="assets/image/PCB_2D.png" width=700></img>
-
+-->
 #### Result
 
 The PCB result:
 
 <img src="assets/image/PCB_Board.jpg" align="center" width=700/>
 
-After printing the PCB I try again to get data. Using the same frequency, amplitude, electrode housing and plastic marker as the object, I added a little bit of NaCl to the water, and here's the results:
+After printing the PCB I try again to get data. Using the same frequency, amplitude, electrode housing, and plastic marker as the object, I added a little bit of NaCl to the water, and here are the results:
 
 <img src="assets/image/PCB_Result1/PCB_R1.png" align="center"/>
+
+I think one of the reasons that the result contains artifact is because one of the electrode is not glued properly
