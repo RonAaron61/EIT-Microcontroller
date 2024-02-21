@@ -139,7 +139,7 @@ For the microcontroller, I use Wemos S2 Mini, a mini wifi boards based ESP32-S2F
 
 ### Electrode
 
-For the electrode, I used 16 regular copper plates with a thickness of 0.2 cm, a height of 5 cm, and a width of 1 cm. Then the electrodes will be attached to a plastic container with a diameter of 13.5 cm at the top, 11 cm at the bottom a height of 6 cm. The electrode is connected with 16 pin IDC wire
+For the electrode, I used 16 regular copper plates with a thickness of 0.2 cm, a height of 5 cm, and a width of 1 cm. Then the electrodes will be attached to a plastic container with a diameter of 13.5 cm at the top, 11 cm at the bottom, and a height of 6 cm. The electrode is connected with 16 pin IDC wire
 
 <img src="assets/image/ElectrodeHousing.png" align="center"/>
 
@@ -147,8 +147,12 @@ For the electrode, I used 16 regular copper plates with a thickness of 0.2 cm, a
 
 ## Programs
 
-The program is divided into 2 parts, for the microcontroller to get the data, and to process the data into an image. For the microcontroller, I use Micropython simply because I just want to learn
-Micropython, and for the image reconstruction I use the PyEIT library for Python.
+The program is divided into 2 parts, for the microcontroller to get the data, and to process the data into an image. For the microcontroller, I use the basic Arduino/C++ language but I also build the Micropython version simply because I just want to learn Micropython (so there are two versions of the microcontroller programs), and for the image reconstruction, I use the PyEIT library for Python.
+
+### Arduino language
+The library that I use:
+- ADS1115 : [Adafruit ADS1X15](https://github.com/adafruit/Adafruit_ADS1X15/tree/master)
+- AD9833 : [MD_AD9833](https://github.com/MajicDesigns/MD_AD9833/tree/main)
 
 ### Micropython
 
@@ -220,4 +224,4 @@ After printing the PCB I try again to get data. Using the same frequency, amplit
 
 <img src="assets/image/PCB_Result1/PCB_R1.png" align="center"/>
 
-I think one of the reasons that the result contains artifact is because one of the electrode is not glued properly
+I think one of the reasons that the result contains artifact is because one of the electrodes is not glued properly
