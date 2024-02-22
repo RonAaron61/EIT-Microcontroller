@@ -180,8 +180,8 @@ void Tester(int a, int b, int c, int d){
   digitalWrite(18,mux[d][2]);
   digitalWrite(21,mux[d][3]);
 
-  adc = ads.readADC_SingleEnded(0);
-  Serial.println(ads.computeVolts(adc));
+  //adc = ads.readADC_SingleEnded(0);
+  //Serial.println(ads.computeVolts(adc));
 }
 
 
