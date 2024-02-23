@@ -24,7 +24,7 @@ Abstract
 
 ## Introduction
 
-Electrical impedance tomography (EIT) is a non-invasive, radiation-free medical imaging technique. It's used to image the electrical impedance variations inside a volume of interest. In this project I made an EIT using an ESP32-S2 microcontroller, and the EIT that was made had a total of 16 electrodes. One of the goals of this project is to create an EIT that is cheap and easy to create and use.
+Electrical impedance tomography (EIT) is a non-invasive, radiation-free medical imaging technique. It's used to image the electrical impedance variations inside a volume of interest. In this project, I made an EIT using an ESP32-S2 microcontroller, and the EIT that was made had a total of 16 electrodes. One of the goals of this project is to create an EIT that is cheap and easy to create and use.
 
 Previously I had made an EIT using an Analog Discovery 2 for my undergraduate thesis and it was successful, but because the price of the Analog Discovery 2 was relatively expensive, I proposed making an EIT using a microcontroller, namely the ESP32-S2. However, the use of a microcontroller such as ESP has weaknesses, namely the lack of features such as not being able to produce AC signals, not having a good ADC, not being able to read AC signals, etc. so you need to use another module or circuit. but the advantage of using a microcontroller is that it is cheap
 
@@ -147,7 +147,7 @@ For the electrode, I used 16 regular copper plates with a thickness of 0.2 cm, a
 
 ## Programs
 
-The program is divided into 2 parts, for the microcontroller to get the data, and to process the data into an image. For the microcontroller, I use the basic Arduino/C++ language but I also build the Micropython version simply because I just want to learn Micropython (so there are two versions of the microcontroller programs), and for the image reconstruction, I use the PyEIT library for Python.
+The program is divided into 2 parts, for the microcontroller to get the data, and to process the data into an image. For the microcontroller, I use the basic Arduino/C++ language but I also build the Micropython version simply because I just want to learn Micropython (so there are two versions of the microcontroller programs) for now only the Arduino program that can be connected to the python program directly, and for the image reconstruction, I use the PyEIT library for Python.
 
 ### Arduino language
 The library that I use:
