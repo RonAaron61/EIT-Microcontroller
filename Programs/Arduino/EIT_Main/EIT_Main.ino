@@ -134,7 +134,7 @@ void Get_Data(int n_elec = 16){
 
       digitalWrite(LED_BuIn, mux[j][3]);
 
-      delay(200);
+      delay(2);
 
       adc = ads.readADC_SingleEnded(0);
       //voltage = ads.computeVolts(adc);
@@ -148,7 +148,7 @@ void Get_Data(int n_elec = 16){
   digitalWrite(LED1, LOW);
   digitalWrite(LED_BuIn, LOW);
   digitalWrite(LED2, HIGH);
-  delay(2000);
+  delay(500);
   digitalWrite(LED2, LOW);
 }
 
