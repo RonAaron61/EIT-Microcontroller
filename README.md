@@ -18,7 +18,8 @@ Creating an Electrical Impedance Tomography device using ESP32-S2 as the microco
 
 ## Abstract
 
-Abstract
+In this project, I try to make 16 electrode Electrical Impedance Tomography (EIT) using the ESP32-S2 microcontroller. The EIT consists of function generator, VCCS, instrument amplifier, and AC-to-DC converter. 
+The data gathered can be reconstructed into images either with homogenous data (data without anomaly/ object in it) or average data (average of anomaly data), images are reconstructed using the PyEIT library with a back-projection method. Data was gathered using a 40 kHz sine wave with around 0.5 mA. Results show that the reconstructed image is better with homogenous data rather than average data
 
 ---
 
@@ -224,4 +225,19 @@ After printing the PCB I try again to get data. Using the same frequency, amplit
 
 <img src="assets/image/PCB_Result1/PCB_R1.png" align="center"/>
 
-I think one of the reasons that the result contains artifact is because one of the electrodes is not glued properly
+I think one of the reasons that the result contains artifact is because one of the electrodes is not glued properly, there is some electrode that is not sticking anymore so I have to reglued it again
+
+<!--
+#### Live
+
+I also try to make the live version of it, so it can continually get new data and reconstruct it. For now, it only gets to around 1 frame per 2.5 seconds, so I have to lower the resolution to speed up the time to reconstruct with the number of triangles = 1437 and number of nodes = 787
+
+using homogenous data as a reference
+
+https://github.com/RonAaron61/EIT-Microcontroller/assets/105662575/33a52ea2-a57a-4c24-b3c0-827c3457fa2d
+
+using average data as a reference 
+
+https://github.com/RonAaron61/EIT-Microcontroller/assets/105662575/49a184f1-4454-4b5f-a0ca-f5713cd9301d
+
+-->
