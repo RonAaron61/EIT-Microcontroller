@@ -227,17 +227,17 @@ After printing the PCB I try again to get data. Using the same frequency, amplit
 
 I think one of the reasons that the result contains artifact is because one of the electrodes is not glued properly, there is some electrode that is not sticking anymore so I have to reglued it again
 
-<!--
+
 #### Live
 
-I also try to make the live version of it, so it can continually get new data and reconstruct it. For now, it only gets to around 1 frame per 2.5 seconds, so I have to lower the resolution to speed up the time to reconstruct with the number of triangles = 1437 and number of nodes = 787
+I also try to make the live version of it, so it can continually get new data and reconstruct it. For now, it only gets to around 1 frame per 3 seconds when reconstructed with the number of triangles = 5567 and number of nodes = 2906
 
 using homogenous data as a reference
 
-https://github.com/RonAaron61/EIT-Microcontroller/assets/105662575/33a52ea2-a57a-4c24-b3c0-827c3457fa2d
+https://github.com/RonAaron61/EIT-Microcontroller/assets/105662575/003caefe-767b-46f7-8fab-889f00fd1ec9
 
 using average data as a reference 
 
-https://github.com/RonAaron61/EIT-Microcontroller/assets/105662575/49a184f1-4454-4b5f-a0ca-f5713cd9301d
+https://github.com/RonAaron61/EIT-Microcontroller/assets/105662575/c9d3139b-2922-4933-a1d9-d6e452c55d31
 
--->
+if you want it to be quicker the resolution can be reduced and more optimize the code because for now, the process is step-by-step (get data -> process -> get data -> etc) maybe it can be changed to get the next data while reconstructing the previous data in the same time
